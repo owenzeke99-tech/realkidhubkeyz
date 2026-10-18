@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020813">
+<title>RealKid Hub - Premium Key System</title>
+
+<style>
+:root {
+  --ice: #27d7ff;
+  --blue: #087bff;
+  --pale: #c4f8ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 50% 35%, #06376c 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 90%, #003c72 0%, transparent 35%),
+    linear-gradient(135deg, #01040b, #03152b 55%, #01040a);
+  color: #effaff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#37aaff0b 1px, transparent 1px),
+    linear-gradient(90deg, #37aaff0b 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.aurora {
+  position: fixed;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: #008cff;
+  filter: blur(130px);
+  opacity: .19;
+  pointer-events: none;
+  animation: aurora 10s ease-in-out infinite alternate;
+}
+
+.aurora.a { top: -180px; left: -100px; }
+.aurora.b {
+  bottom: -180px;
+  right: -100px;
+  background: #00d9ff;
+  animation-delay: -4s;
+}
+
+@keyframes aurora {
+  to { transform: translate(80px, 60px) scale(1.25); }
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  bottom: -15px;
+  border-radius: 50%;
+  background: #c4f8ff;
+  box-shadow: 0 0 12px 2px #17baff;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: .9; }
+  80% { opacity: .5; }
+  100% { transform: translate(45px, -110vh); opacity: 0; }
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 5%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  color: var(--ice);
+  font-size: 27px;
+  text-shadow: 0 0 16px #19baff;
+}
+
+.brand-name {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.brand-sub {
+  margin-top: 4px;
+  font-size: 9px;
+  color: #65bfff;
+  letter-spacing: 2px;
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #1ebeff90;
+  border-radius: 30px;
+  background: #007cff12;
+  color: #9ceaff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.online-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #25ffc4;
+  box-shadow: 0 0 10px #25ffc4;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .35; }
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 32px, 700px);
+  margin: 48px auto 45px;
+  text-align: center;
+  animation: appear .8s ease both;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SMALLER ICE R LOGO */
+.logo-wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 4px;
+  display: grid;
+  place-items: center;
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+.logo-orbit {
+  position: absolute;
+  width: 106px;
+  height: 106px;
+  border: 1px solid #36cfff80;
+  border-radius: 50%;
+  box-shadow: 0 0 18px #008fff30,
+              inset 0 0 15px #008fff15;
+  animation: orbit 12s linear infinite;
+}
+
+.logo-orbit::before,
+.logo-orbit::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #c8fbff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px #00bfff;
+}
+
+.logo-orbit::before { top: 10px; left: 19px; }
+.logo-orbit::after { bottom: 10px; right: 19px; }
+
+.logo-orbit.two {
+  width: 91px;
+  height: 91px;
+  border: 1px dashed #008cff80;
+  animation-direction: reverse;
+  animation-duration: 17s;
+}
+
+.logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 76px;
+  font-family: Georgia, serif;
+  font-size: 65px;
+  line-height: 1;
+  font-weight: 900;
+  font-style: italic;
+  transform: skewY(-5deg);
+  background: linear-gradient(
+    125deg,
+    #fff 5%,
+    #b8f8ff 28%,
+    #31d9ff 55%,
+    #1682ff 78%,
+    #d9fbff 95%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 5px #18bfff)
+          drop-shadow(0 0 12px #087bff);
+}
+
+.logo::after {
+  content: "R";
+  position: absolute;
+  inset: 2px 0 0 2px;
+  z-index: -1;
+  color: #0069cf;
+  -webkit-text-fill-color: #0069cf;
+  filter: blur(1px);
+}
+
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+h1 {
+  font-size: clamp(36px, 7vw, 59px);
+  font-weight: 1000;
+  font-style: italic;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  background: linear-gradient(100deg, #fff, #92eaff 40%, #18baff 68%, #fff);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 15px #00aaff40);
+  animation: textShine 5s linear infinite;
+}
+
+@keyframes textShine {
+  to { background-position: 200% center; }
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #a3dfff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px auto;
+  color: var(--ice);
+}
+
+.separator span {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #19cfff);
+}
+
+.separator span:last-child { transform: rotate(180deg); }
+
+.separator i {
+  width: 5px;
+  height: 5px;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px #19cfff;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 18px;
+  border: 1px solid #18e9bb90;
+  background: #00dba40c;
+  border-radius: 30px;
+  color: #51ffcf;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  box-shadow: 0 0 22px #00dba410;
+}
+
+.status .online-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.panel {
+  position: relative;
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #139fff9c;
+  border-radius: 21px;
+  background: linear-gradient(135deg, #061b33ed, #020c1cf5 60%, #061d38ed);
+  box-shadow: 0 0 25px #007bff22,
+              inset 0 0 35px #007bff0c,
+              0 25px 70px #0008;
+  overflow: hidden;
+  text-align: left;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bafaff, transparent);
+  box-shadow: 0 0 20px #22cfff;
+  animation: scan 5s linear infinite;
+}
+
+@keyframes scan {
+  to { left: 150%; }
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 13px;
+  color: #b9eaff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.key-field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px;
+  background: #010a17;
+  border: 1px solid #087fff;
+  border-radius: 13px;
+  box-shadow: inset 0 0 22px #008cff15, 0 0 20px #008cff15;
+  transition: .3s;
+}
+
+.key-field:focus-within {
+  border-color: #7aeaff;
+  box-shadow: 0 0 22px #008cff35;
+}
+
+#key {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 11px 7px;
+  background: transparent;
+  color: #d6f7ff;
+  border: none;
+  outline: none;
+  font-family: Consolas, monospace;
+  font-size: clamp(10px, 2.4vw, 14px);
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.copy-small {
+  flex-shrink: 0;
+  width: 41px;
+  height: 41px;
+  border: 1px solid #72e8ff;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #12bfff, #075cff);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.copy-small:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 22px #00aaff90;
+}
+
+.copy-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 310px);
+  min-height: 60px;
+  margin: 21px auto 0;
+  overflow: hidden;
+  border: 1px solid #bafaff;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #0075f5, #09cfff 48%, #0562ed);
+  background-size: 200% 100%;
+  color: white;
+  font-size: 15px;
+  font-weight: 1000;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #008cff70, inset 0 1px #ffffff80;
+  transition: transform .25s, box-shadow .25s;
+  animation: buttonGlow 3s ease-in-out infinite;
+}
+
+.copy-main::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -55%;
+  width: 35%;
+  height: 260%;
+  transform: rotate(25deg);
+  background: #ffffff50;
+  filter: blur(8px);
+  animation: buttonSweep 4s ease-in-out infinite;
+}
+
+.copy-main span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes buttonGlow {
+  50% { box-shadow: 0 0 35px #00cfff9c, inset 0 1px #fff; }
+}
+
+@keyframes buttonSweep {
+  0%, 25% { left: -55%; }
+  70%, 100% { left: 140%; }
+}
+
+.copy-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 42px #00bfffbb;
+}
+
+.copy-main:active { transform: scale(.97); }
+
+.message {
+  min-height: 18px;
+  margin-top: 12px;
+  text-align: center;
+  color: #68ffda;
+  font-size: 12px;
+}
+
+.panel-footer {
+  margin-top: 17px;
+  color: #52caff;
+  font-size: 9px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.feature {
+  padding: 15px 7px;
+  border: 1px solid #2a9fff42;
+  border-radius: 13px;
+  background: #061a30a8;
+  text-align: center;
+  transition: .3s;
+}
+
+.feature:nth-child(2) { animation-delay: .15s; }
+.feature:nth-child(3) { animation-delay: .3s; }
+
+.feature:hover {
+  transform: translateY(-4px);
+  border-color: #2bcfff;
+  background: #087bff1a;
+  box-shadow: 0 0 22px #008cff18;
+}
+
+.feature-icon {
+  display: block;
+  margin-bottom: 8px;
+  color: #54ddff;
+  font-size: 22px;
+  filter: drop-shadow(0 0 7px #008cff);
+}
+
+.feature strong {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .8px;
+}
+
+.feature small {
+  display: block;
+  margin-top: 5px;
+  color: #7faccb;
+  font-size: 10px;
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  padding: 0 15px 26px;
+  color: #4e87ad;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+footer b { color: #75dfff; }
+
+@media (max-width: 520px) {
+  header { padding: 18px 14px; }
+  .brand-name { font-size: 11px; letter-spacing: 1.5px; }
+  .brand-sub { font-size: 7px; letter-spacing: 1px; }
+  .online { padding: 8px 9px; font-size: 7px; }
+  main { margin-top: 30px; }
+  .logo-wrap { transform: scale(.92); margin-bottom: 0; }
+  h1 { font-size: clamp(32px, 9vw, 45px); }
+  .subtitle { letter-spacing: 2.5px; }
+  .panel { padding: 18px 12px; }
+  .features { gap: 6px; }
+  .feature { padding: 13px 3px; }
+  .feature strong { font-size: 8px; }
+  .feature small { font-size: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="aurora a"></div>
+<div class="aurora b"></div>
+<div id="particles"></div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">♛</div>
+    <div>
+      <div class="brand-name">REALKID HUB</div>
+      <div class="brand-sub">PLAY · EXPLORE · ENJOY</div>
+    </div>
+  </div>
+
+  <div class="online">
+    <span class="online-dot"></span>
+    KEY SYSTEM ONLINE
+  </div>
+</header>
+
+<main>
+  <div class="logo-wrap">
+    <div class="logo-orbit"></div>
+    <div class="logo-orbit two"></div>
+    <div class="logo">R</div>
+  </div>
+
+  <h1>RealKid Hub</h1>
+  <p class="subtitle">PREMIUM KEY SYSTEM</p>
+
+  <div class="separator">
+    <span></span><i></i><b>✦</b><i></i><span></span>
+  </div>
+
+  <div class="status">
+    <span class="online-dot"></span>
+    KEY READY TO COPY
+  </div>
+
+  <section class="panel">
+    <label class="field-label" for="key">
+      <span>⚿</span> YOUR ACCESS KEY
+    </label>
+
+    <div class="key-field">
+      <input
+        id="key"
+        type="text"
+        value="RealKidHubKeyKakwowohLapqowiwnBxksowowjie"
+        readonly
+        spellcheck="false"
+        aria-label="Your access key"
+      >
+      <button class="copy-small" id="copySmall"
+        type="button" aria-label="Copy access key">▣</button>
+    </div>
+
+    <button class="copy-main" id="copyMain" type="button">
+      <span>▤</span>
+      <span id="copyText">COPY KEY</span>
+      <span>➜</span>
+    </button>
+
+    <div class="message" id="message" aria-live="polite"></div>
+
+    <div class="panel-footer">
+      REALKID HUB · PREMIUM ACCESS
+    </div>
+  </section>
+
+  <div class="features">
+    <div class="feature">
+      <span class="feature-icon">ϟ</span>
+      <strong>FAST ACCESS</strong>
+      <small>Quick & Easy</small>
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">◇</span>
+      <strong>STABLE</strong>
+      <small>Smooth Experience</small>
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">♛</span>
+      <strong>PREMIUM</strong>
+      <small>Built for You</small>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <b>REALKID HUB</b> · BETTER · STRONGER · TOGETHER
+</footer>
+
+<script>
+const keyInput = document.getElementById("key");
+const copyMain = document.getElementById("copyMain");
+const copySmall = document.getElementById("copySmall");
+const copyText = document.getElementById("copyText");
+const message = document.getElementById("message");
+
+let resetTimer;
+
+function showCopied() {
+  copyText.textContent = "COPIED!";
+  message.textContent = "✓ Key copied successfully!";
+
+  clearTimeout(resetTimer);
+  resetTimer = setTimeout(() => {
+    copyText.textContent = "COPY KEY";
+    message.textContent = "";
+  }, 2200);
+}
+
+async function copyKey() {
+  const value = keyInput.value;
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+    } else {
+      keyInput.focus();
+      keyInput.select();
+      keyInput.setSelectionRange(0, value.length);
+
+      if (!document.execCommand("copy")) {
+        throw new Error("Copy failed");
+      }
+    }
+
+    showCopied();
+  } catch (error) {
+    message.textContent = "Select the key above and copy it manually.";
+    keyInput.focus();
+    keyInput.select();
+  }
+}
+
+copyMain.addEventListener("click", copyKey);
+copySmall.addEventListener("click", copyKey);
+
+const particles = document.getElementById("particles");
+
+for (let i = 0; i < 32; i++) {
+  const p = document.createElement("span");
+  p.className = "particle";
+
+  const size = Math.random() * 3 + 1;
+  p.style.width = size + "px";
+  p.style.height = size + "px";
+  p.style.left = Math.random() * 100 + "%";
+  p.style.animationDuration = (7 + Math.random() * 12) + "s";
+  p.style.animationDelay = (-Math.random() * 15) + "s";
+
+  particles.appendChild(p);
+}
+</script>
+</body>
+</html>
